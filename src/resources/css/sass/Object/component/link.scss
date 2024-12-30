@@ -1,0 +1,13 @@
+@import "../../Foundation/base";
+
+.c-link{
+    text-align: center;
+
+    &--item{
+        color: $linkColor;
+
+        &:hover{
+            color: $linkHoverColor;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "../../Foundation/base";
+
+.p-flash-message{
+    font-weight: bold;
+    margin: 30px auto 50px;
+    text-align: center;
+    width: 100%;
+
+    &--error{
+        @include alertErrorBox();
+    }
+
+    &--success{
+        @include alertSuccessBox();
+    }
+}

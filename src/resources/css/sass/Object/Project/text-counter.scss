@@ -1,0 +1,12 @@
+@import "../../Foundation/variables";
+
+.p-text-counter{
+    margin: 5px 0 15px;
+    text-align: right;
+
+    &__length{
+        &.over{
+            color: $errorColor;
+        }
+    }
+}

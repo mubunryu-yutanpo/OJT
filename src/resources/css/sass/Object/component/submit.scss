@@ -1,0 +1,5 @@
+@import "../../Foundation/base";
+
+.c-submit{
+    @include buttonPrimary();
+}

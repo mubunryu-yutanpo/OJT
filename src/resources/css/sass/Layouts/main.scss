@@ -1,0 +1,11 @@
+@import "../Foundation/base";
+
+.l-main{
+    margin: 60px auto;
+    max-width: 1000px;
+    min-height: 600px;
+
+    @include mq(md){
+        padding: 0 30px;
+    }
+}

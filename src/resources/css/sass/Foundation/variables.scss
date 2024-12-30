@@ -1,0 +1,139 @@
+
+//　==========各種カラー==========
+
+// 背景色など
+//$catchColorPink: #FF9900;
+//$secondaryColor: #EA5417;
+//$headlineBgColor: #FAF4EB;
+//$bgColor: #F2F2F2;
+$bgColor: #F6F5F2;
+$headlineBgColor: #F0EBE3;
+$catchColorPink: #F3D0D7;
+$catchColorLightPink: #FFEFEF;
+$errorColor: #ff2626;
+$successColor: #002b00;
+
+//　リンク
+$linkColor: #818ffc;
+$linkHoverColor: #c08181;
+
+//　テキスト
+$primaryTextColor: #333;
+$secondaryTextColor: #666;
+$buttonTextColor: #c08181;
+
+//　線
+$borderPrimaryColor: #000;
+$borderSecondaryColor: #CACACA;
+
+//　==========フォントサイズ==========
+$ss: 12px;
+$s: 14px;
+$m: 15px;
+$default: 16px;
+$l: 20px;
+$ll: 24px;
+
+$h2: 1.2rem;
+$h3: 1.15rem;
+$h5: 1.075rem;
+
+//ブレークポイント
+$breakpoints: (
+    'sm': 'screen and (max-width:450px)',
+    'md': 'screen and (max-width:700px)',
+    'lg': 'screen and (max-width:1000px)',
+) !default;
+
+// ==========ミックスイン==========
+
+@mixin mq($breakpoint: md){
+    @media #{map-get($breakpoints,$breakpoint)}{
+        @content;
+    }
+}
+
+@mixin spaceReset(){
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexContent($justify-content: space-between){
+    align-items: center;
+    display: flex;
+    justify-content: $justify-content;
+}
+
+@mixin flexColumn($text-align: center){
+    display: flex;
+    flex-direction: column;
+    text-align: $text-align;
+}
+
+@mixin defaultInputStyle(){
+    background: #fff;
+    border: 1px solid $borderSecondaryColor;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #dcdcdc;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+@mixin defaultLabelStyle(){
+    display: block;
+    font-size: $default;
+    width: 100%;
+}
+
+@mixin buttonPrimary(){
+    background: $headlineBgColor;
+    border: none;
+    border-radius: 5px;
+    color: $secondaryTextColor;
+    cursor: pointer;
+    font-size: $m;
+    font-weight: bold;
+    max-width: 140px;
+    padding: 15px 20px;
+    text-align: center;
+    transition: all .3s;
+    width: 100%;
+
+    &:hover{
+        background: $catchColorPink;
+        color: $buttonTextColor;
+        transition: all .3s;
+    }
+}
+
+@mixin buttonSecondary(){
+    background: #fff;
+    border: 1px solid $catchColorPink;
+    border-radius: 5px;
+    color: $primaryTextColor;
+    cursor: pointer;
+    max-width: 140px;
+    padding: 10px 15px;
+    text-align: center;
+
+    &:hover{
+        background: $buttonTextColor;
+        color: #fff;
+        transition: all .3s;
+    }
+}
+
+@mixin alertErrorBox(){
+    background: #fff;
+    border: 1px solid $errorColor;
+    color: $errorColor;
+    padding: 15px 20px;
+}
+
+@mixin alertSuccessBox(){
+    background: #d5ffd5;
+    border: 1px solid #a1ffa1;
+    color: $successColor;
+    padding: 15px 20px;
+    text-align: center;
+}

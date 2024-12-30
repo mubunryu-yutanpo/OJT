@@ -1,0 +1,49 @@
+@import 'variables.scss';
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background: $bgColor;
+    color: $primaryTextColor;
+    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,ヒラギノ角ゴ ProN,Hiragino Kaku Gothic ProN,メイリオ,Meiryo,osaka,ＭＳ Ｐゴシック,MS PGothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji,sans-serif;
+    font-size: $default;
+    @include spaceReset;
+}
+a{
+    color: $linkColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    color: $linkHoverColor;
+}
+ul,li{
+    @include spaceReset;
+    list-style: none;
+}
+img{
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+p{
+    @include spaceReset;
+    word-break: break-word;
+}
+h1,h2,h3,h4,h5,h6{
+    @include spaceReset;
+    font-weight: normal;
+}
+input,textarea{
+    @include spaceReset;
+    @include defaultInputStyle;
+}
+textarea{
+    resize: none;
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
