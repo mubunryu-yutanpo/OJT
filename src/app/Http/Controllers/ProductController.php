@@ -25,8 +25,7 @@ class ProductController extends Controller
     */
     public function index(): View
     {
-        dd('一覧');
-        //return view('products.index');
+        return view('products.index');
     }
 
     /**
