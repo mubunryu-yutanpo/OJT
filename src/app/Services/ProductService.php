@@ -16,6 +16,24 @@ class ProductService
     }
 
     /**
+     * 商品一覧を取得
+    */
+    public function getProducts()
+    {
+        return Product::with('user')->get();
+    }
+
+    /**
+     * 商品の詳細情報を取得
+     * @param int $id
+     * @return Product
+    */
+    public function getProductDetail(int $id)
+    {
+        return Product::findOrFail($id)->with('user')->first();
+    }
+
+    /**
      * 商品の画像URLを生成
      * @return string
     */

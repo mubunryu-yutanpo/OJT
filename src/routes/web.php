@@ -41,5 +41,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
         Route::post('/edit/{id}', [ProductController::class, 'update'])->name('update');
         Route::post('/delete/{id}', [ProductController::class, 'destroy'])->name('destroy');
+        // 詳細
+        Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
     });
 });

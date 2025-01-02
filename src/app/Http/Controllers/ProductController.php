@@ -25,7 +25,21 @@ class ProductController extends Controller
     */
     public function index(): View
     {
-        return view('products.index');
+        $products = $this->productService->getProducts();
+
+        return view('products.index', compact('products'));
+    }
+
+    /**
+     * 商品詳細画面を表示
+     * @param int $id
+     * @return View
+    */
+    public function show(int $id): View
+    {
+        $product = $this->productService->getProductDetail($id);
+
+        return view('products.show', compact('product') );
     }
 
     /**
