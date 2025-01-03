@@ -21,6 +21,7 @@ class ProductController extends Controller
 
     /**
      * 商品一覧画面を表示
+     * @todo デザインまだ
      * @return View
     */
     public function index(): View
@@ -32,14 +33,16 @@ class ProductController extends Controller
 
     /**
      * 商品詳細画面を表示
+     * @todo デザインまだ
      * @param int $id
      * @return View
     */
     public function show(int $id): View
     {
         $product = $this->productService->getProductDetail($id);
+        $isMine = Auth::id() === $product->user_id;
 
-        return view('products.show', compact('product') );
+        return view('products.show', compact('product', 'isMine') );
     }
 
     /**
@@ -91,7 +94,6 @@ class ProductController extends Controller
 
     /**
      * 商品編集
-     * @todo 商品編集用のバリデーション作成・適用
      * @param CreateOrUpdateProductRequest $request
      * @param int $id
      * @return RedirectResponse
@@ -120,6 +122,6 @@ class ProductController extends Controller
     public function destroy(int $id): RedirectResponse
     {
         dd('destroy');
-        //return redirect()->back()->with('success', '商品を削除しました');
+        return redirect()->back()->with('success', '商品を削除しました');
     }
 }

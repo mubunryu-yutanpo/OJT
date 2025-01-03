@@ -43,5 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/delete/{id}', [ProductController::class, 'destroy'])->name('destroy');
         // 詳細
         Route::get('/show/{id}', [ProductController::class, 'show'])->name('show');
+        // 削除
+        Route::post('/delete/{id}', [ProductController::class, 'destroy'])->name('destroy');
     });
 });
